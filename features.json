@@ -1,0 +1,37 @@
+[
+  {
+    "tag": ".md",
+    "title": "Markdown editor",
+    "body": "Distraction-free writing with live split-pane preview. Edit / split / preview modes. Mermaid diagram rendering."
+  },
+  {
+    "tag": "#skill",
+    "title": "Skill autocomplete",
+    "body": "Type <code>#</code> to fuzzy-search skills, <code>/</code> for agents. Hover to preview a skill without leaving the editor."
+  },
+  {
+    "tag": "/df",
+    "title": "Claude Code bridge",
+    "body": "Open files directly from Claude Code, edit them, and send the result back with one click."
+  },
+  {
+    "tag": "∿",
+    "title": "Token counter",
+    "body": "Real-time token count powered by <code>@anthropic-ai/tokenizer</code>. Know your context before you send."
+  },
+  {
+    "tag": "~/",
+    "title": "Project tree",
+    "body": "Browse all files rooted at the nearest <code>CLAUDE.md</code>. Recent files panel. Quick-open palette via <code>⌘P</code>."
+  },
+  {
+    "tag": "◻",
+    "title": "Scratchpad",
+    "body": "Persistent scratch space separate from your draft. Auto-saved to <code>~/.claude/draftflow-scratch.md</code>."
+  },
+  {
+    "tag": "✦",
+    "title": "Suggested skills",
+    "body": "As you type, relevant skills surface as chips below the editor — no trigger needed. Powered by <code>claude-haiku-4-5</code>. Silently off without an API key."
+  }
+]
