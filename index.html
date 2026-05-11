@@ -215,223 +215,15 @@ nav {
   padding-bottom: 4rem;
 }
 
-/* ─── APP MOCKUP ─── */
-.hero-mockup { margin-top: 0; }
-.mockup-window {
-  background: #1e1c18;
-  border-radius: 12px 12px 0 0;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-bottom: none;
-  box-shadow: 0 -2px 60px rgba(26,23,20,0.18), 0 0 0 1px rgba(26,23,20,0.08);
+/* ─── HERO GIF ─── */
+.hero-media { margin-top: 0; }
+.hero-gif {
+  width: 100%;
   max-width: 820px;
   margin: 0 auto;
-}
-.mockup-titlebar {
-  background: #2a2724;
-  padding: 11px 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-.m-dot { width: 10px; height: 10px; border-radius: 50%; }
-.m-red { background: #e06c75; }
-.m-yel { background: #e5c07b; }
-.m-grn { background: #98c379; }
-.mockup-title {
-  flex: 1;
-  text-align: center;
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  color: rgba(255,255,255,0.25);
-  letter-spacing: 0.04em;
-}
-.mockup-body {
-  display: grid;
-  grid-template-columns: 220px 1fr 1fr;
-  min-height: 340px;
-}
-.mockup-sidebar {
-  background: #252320;
-  border-right: 1px solid rgba(255,255,255,0.05);
-  padding: 14px 0;
-}
-.sidebar-section { padding: 0 14px; margin-bottom: 16px; }
-.sidebar-label {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  color: rgba(255,255,255,0.2);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-  padding: 0 2px;
-}
-.sidebar-item {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 5px 8px;
-  border-radius: 5px;
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  color: rgba(255,255,255,0.45);
-  cursor: default;
-  margin-bottom: 2px;
-}
-.sidebar-item.active { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.8); }
-.sidebar-item-dot { width: 6px; height: 6px; border-radius: 50%; background: #98c379; flex-shrink: 0; }
-.sidebar-item-dot.md { background: #61afef; }
-.sidebar-item-dot.grey { background: rgba(255,255,255,0.2); }
-.mockup-editor {
-  background: #1e1c18;
-  padding: 18px 20px;
-  border-right: 1px solid rgba(255,255,255,0.05);
-  overflow: hidden;
-}
-.editor-toolbar { display: flex; gap: 6px; margin-bottom: 10px; align-items: center; }
-.toolbar-btn {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  color: rgba(255,255,255,0.3);
-  padding: 3px 8px;
-  border-radius: 4px;
-  border: 1px solid rgba(255,255,255,0.08);
-  cursor: default;
-}
-.toolbar-btn.active {
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.7);
-  border-color: rgba(255,255,255,0.15);
-}
-.editor-content { font-family: var(--mono); font-size: 0.7rem; line-height: 1.9; color: rgba(255,255,255,0.5); }
-.e-heading { color: #e5c07b; }
-.e-text { color: rgba(255,255,255,0.55); }
-.e-skill { color: #98c379; background: rgba(152,195,121,0.1); border-radius: 3px; padding: 0 3px; }
-.e-muted { color: rgba(255,255,255,0.22); }
-.e-cursor {
-  display: inline-block;
-  width: 1.5px;
-  height: 0.9em;
-  background: #98c379;
-  vertical-align: middle;
-  animation: blink 1s step-end infinite;
-  margin-left: 1px;
-}
-.autocomplete-popup {
-  position: relative;
-  margin: 8px 0 4px;
-  background: #2a2724;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 7px;
-  overflow: hidden;
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  width: 210px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-}
-.ac-header {
-  padding: 5px 10px;
-  font-size: 0.58rem;
-  color: rgba(255,255,255,0.25);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.ac-item {
-  padding: 6px 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: rgba(255,255,255,0.5);
-}
-.ac-item.ac-active { background: rgba(152,195,121,0.12); color: #98c379; }
-.ac-tag {
-  font-size: 0.58rem;
-  background: rgba(152,195,121,0.15);
-  color: #98c379;
-  padding: 1px 5px;
-  border-radius: 3px;
-  border: 1px solid rgba(152,195,121,0.2);
-}
-.ac-desc { color: rgba(255,255,255,0.28); font-size: 0.6rem; margin-left: auto; white-space: nowrap; }
-.suggestions-strip {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 0 6px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  flex-wrap: wrap;
-}
-.suggestions-label {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  color: rgba(255,255,255,0.2);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-right: 2px;
-  flex-shrink: 0;
-}
-.suggestion-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.09);
-  border-radius: 100px;
-  padding: 3px 9px 3px 7px;
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  color: rgba(255,255,255,0.5);
-  cursor: default;
-  transition: background 0.12s;
-  opacity: 0;
-  transform: translateY(6px);
-}
-.suggestion-chip:hover { background: rgba(255,255,255,0.09); }
-.suggestion-chip-dot { width: 5px; height: 5px; border-radius: 50%; background: #98c379; opacity: 0.7; flex-shrink: 0; }
-.suggestion-chip-reason { color: rgba(255,255,255,0.22); font-size: 0.56rem; margin-left: 1px; }
-.suggestion-chip-dismiss { color: rgba(255,255,255,0.2); font-size: 0.6rem; margin-left: 3px; line-height: 1; }
-.editor-footer {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  margin-top: 10px;
-}
-.editor-stat { font-family: var(--mono); font-size: 0.6rem; color: rgba(255,255,255,0.22); }
-.editor-stat span { color: rgba(255,255,255,0.45); }
-.send-btn {
-  margin-left: auto;
-  background: var(--accent);
-  color: rgba(255,255,255,0.9);
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  padding: 4px 12px;
-  border-radius: 5px;
-  letter-spacing: 0.02em;
-}
-.mockup-preview { background: #262320; padding: 18px 20px; overflow: hidden; }
-.preview-label {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  color: rgba(255,255,255,0.2);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-.preview-content { font-family: var(--serif); font-size: 0.75rem; line-height: 1.7; color: rgba(255,255,255,0.55); }
-.preview-h2 { font-size: 0.78rem; color: rgba(255,255,255,0.65); margin: 10px 0 5px; font-weight: 500; }
-.preview-p { color: rgba(255,255,255,0.45); font-size: 0.7rem; margin-bottom: 6px; }
-.preview-code {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 4px;
-  padding: 2px 6px;
-  color: #98c379;
+  display: block;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -2px 60px rgba(26,23,20,0.18), 0 0 0 1px rgba(26,23,20,0.08);
 }
 
 /* ─── DIVIDER ─── */
@@ -510,9 +302,19 @@ nav {
   padding: 1px 5px;
   color: var(--accent);
 }
+.feature-media { margin-top: 0.75rem; }
+.feature-media img { width: 100%; border-radius: 6px; display: block; }
 
 /* ─── BRIDGE SECTION ─── */
 .bridge-section { padding: 5rem 0; border-top: 1px solid var(--border); }
+.bridge-gif-wrap {
+  margin-top: 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--paper-dark);
+}
+.bridge-gif-wrap img { width: 100%; display: block; }
 .bridge-flow { margin-top: 2.5rem; display: flex; flex-direction: column; }
 .bridge-step { display: grid; grid-template-columns: 56px 1fr; gap: 0 1.4rem; align-items: stretch; }
 .bridge-step-line { display: flex; flex-direction: column; align-items: center; }
@@ -689,9 +491,6 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 0; }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 740px) {
-  .mockup-body { grid-template-columns: 1fr; min-height: auto; }
-  .mockup-sidebar { display: none; }
-  .mockup-preview { display: none; }
   .nav-links { display: none; }
 }
 @media (max-width: 680px) { .features-grid { grid-template-columns: 1fr 1fr; } }
@@ -738,123 +537,10 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 0; }
     <div class="hero-note reveal reveal-delay-4">macOS · Node.js 18+</div>
   </div>
 
-  <!-- APP MOCKUP -->
-  <div class="hero-mockup reveal">
+  <!-- HERO GIF -->
+  <div class="hero-media reveal">
     <div class="wrap">
-      <div class="mockup-window">
-        <div class="mockup-titlebar">
-          <span class="m-dot m-red"></span>
-          <span class="m-dot m-yel"></span>
-          <span class="m-dot m-grn"></span>
-          <div class="mockup-title">Draftflow — refactor-plan.md</div>
-        </div>
-        <div class="mockup-body">
-          <!-- Sidebar -->
-          <div class="mockup-sidebar">
-            <div class="sidebar-section">
-              <div class="sidebar-label">Project</div>
-              <div class="sidebar-item active">
-                <span class="sidebar-item-dot md"></span>refactor-plan.md
-              </div>
-              <div class="sidebar-item">
-                <span class="sidebar-item-dot md"></span>CLAUDE.md
-              </div>
-              <div class="sidebar-item">
-                <span class="sidebar-item-dot grey"></span>notes.md
-              </div>
-            </div>
-            <div class="sidebar-section">
-              <div class="sidebar-label">Skills</div>
-              <div class="sidebar-item">
-                <span class="sidebar-item-dot" style="background:#e5c07b"></span>#review
-              </div>
-              <div class="sidebar-item">
-                <span class="sidebar-item-dot" style="background:#e5c07b"></span>#plan
-              </div>
-              <div class="sidebar-item">
-                <span class="sidebar-item-dot" style="background:#e5c07b"></span>#debug
-              </div>
-            </div>
-          </div>
-
-          <!-- Editor -->
-          <div class="mockup-editor">
-            <div class="editor-toolbar">
-              <div class="toolbar-btn active">Edit</div>
-              <div class="toolbar-btn">Split</div>
-              <div class="toolbar-btn">Preview</div>
-            </div>
-            <div class="editor-content">
-              <div class="e-heading">## Refactor Plan</div>
-              <div class="e-text">&nbsp;</div>
-              <div class="e-text">Migrate the auth module to</div>
-              <div class="e-text">use JWT. Key steps:</div>
-              <div class="e-text">&nbsp;</div>
-              <div class="e-text">1. Replace session store</div>
-              <div class="e-text">2. Update middleware</div>
-              <div class="e-text">3. <span class="e-skill">#review</span> each route<span class="e-cursor"></span></div>
-              <div class="e-muted">&nbsp;</div>
-            </div>
-
-            <!-- Autocomplete popup -->
-            <div class="autocomplete-popup">
-              <div class="ac-header">Skills — type # to search</div>
-              <div class="ac-item ac-active">
-                <span class="ac-tag">#review</span>
-                Code review
-                <span class="ac-desc">match</span>
-              </div>
-              <div class="ac-item">
-                <span class="ac-tag">#plan</span>
-                Planning skill
-              </div>
-              <div class="ac-item">
-                <span class="ac-tag">#refactor</span>
-                Refactoring
-              </div>
-            </div>
-
-            <!-- Contextual suggestions strip -->
-            <div class="suggestions-strip">
-              <span class="suggestions-label">Suggested</span>
-              <div class="suggestion-chip">
-                <span class="suggestion-chip-dot"></span>
-                #review
-                <span class="suggestion-chip-reason">code review</span>
-                <span class="suggestion-chip-dismiss">×</span>
-              </div>
-              <div class="suggestion-chip">
-                <span class="suggestion-chip-dot"></span>
-                #refactor
-                <span class="suggestion-chip-reason">migration</span>
-                <span class="suggestion-chip-dismiss">×</span>
-              </div>
-              <div class="suggestion-chip">
-                <span class="suggestion-chip-dot"></span>
-                #plan
-                <span class="suggestion-chip-reason">planning</span>
-                <span class="suggestion-chip-dismiss">×</span>
-              </div>
-            </div>
-
-            <div class="editor-footer">
-              <div class="editor-stat">tokens <span id="token-count">0</span></div>
-              <div class="editor-stat">Ln 8, Col 24</div>
-              <div class="send-btn">Send back ↩</div>
-            </div>
-          </div>
-
-          <!-- Preview -->
-          <div class="mockup-preview">
-            <div class="preview-label">Preview</div>
-            <div class="preview-content">
-              <div class="preview-h2">Refactor Plan</div>
-              <div class="preview-p">Migrate the auth module to use JWT. Key steps:</div>
-              <div class="preview-p">1. Replace session store<br>2. Update middleware<br>3. <span class="preview-code">#review</span> each route</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <img src="assets/hero.gif" alt="Draftflow in action" class="hero-gif">
     </div>
   </div>
 </section>
@@ -926,9 +612,13 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 0; }
       </div>
     </div>
 
+    <div class="bridge-gif-wrap reveal">
+      <img src="assets/features/bridge.gif" alt="Round-trip workflow demo" loading="lazy">
+    </div>
+
     <div class="bridge-aside reveal">
       <div class="bridge-aside-label">Bonus: <code>/df p</code></div>
-      <p>Opens Claude's <em>previous response</em> — a plan, a summary — in the preview pane for review. Write notes in the editor, then send only the notes back. The plan is never re-sent to Claude.</p>
+      <p>Opens Claude's <em>previous response</em> — a plan, a summary — in the preview pane for review. Write notes in the editor, then send them back.</p>
     </div>
   </div>
 </section>
@@ -1044,18 +734,23 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 0; }
 
 <script>
 // ─── FEATURES GRID ───
-fetch('features.json')
-  .then(r => r.json())
-  .then(features => {
-    const grid = document.getElementById('features-grid');
-    grid.innerHTML = features.map(f => `
-      <div class="feature-card">
-        <div class="feature-icon">${f.tag}</div>
-        <h3>${f.title}</h3>
-        <p>${f.body}</p>
-      </div>
-    `).join('');
-  });
+const features = [
+  { tag: ".md",    title: "Markdown editor",    body: "Distraction-free writing with live split-pane preview. Edit / split / preview modes. Mermaid diagram rendering." },
+  { tag: "#skill", title: "Skill autocomplete", body: "Type <code>#</code> to fuzzy-search skills, <code>/</code> for agents. Hover to preview a skill without leaving the editor." },
+  { tag: "/df",    title: "Claude Code bridge", body: "Open files directly from Claude Code, edit them, and send the result back with one click." },
+  { tag: "∿",     title: "Token counter",       body: "Real-time token count powered by <code>@anthropic-ai/tokenizer</code>. Know your context before you send." },
+  { tag: "~/",    title: "Project tree",        body: "Browse all files rooted at the nearest <code>CLAUDE.md</code>. Recent files panel. Quick-open palette via <code>⌘P</code>." },
+  { tag: "◻",    title: "Scratchpad",          body: "Persistent scratch space separate from your draft. Auto-saved to <code>~/.claude/draftflow-scratch.md</code>." },
+  { tag: "✦",    title: "Suggested skills",    body: "As you type, relevant skills surface as chips below the editor — no trigger needed. Powered by <code>claude-haiku-4-5</code>. Silently off without an API key." }
+];
+document.getElementById('features-grid').innerHTML = features.map(f => `
+  <div class="feature-card">
+    <div class="feature-icon">${f.tag}</div>
+    <h3>${f.title}</h3>
+    <p>${f.body}</p>
+    ${f.image ? `<div class="feature-media"><img src="${f.image}" alt="${f.title}" loading="lazy"></div>` : ''}
+  </div>
+`).join('');
 
 // ─── FAQ ACCORDION ───
 document.querySelectorAll('.faq-q').forEach(btn => {
@@ -1077,52 +772,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// ─── TOKEN COUNTER ANIMATION ───
-function animateTokens() {
-  const el = document.getElementById('token-count');
-  if (!el) return;
-  const target = 247;
-  const dur = 1200;
-  const start = Date.now();
-  function tick() {
-    const t = Math.min(1, (Date.now() - start) / dur);
-    const eased = 1 - Math.pow(1 - t, 3);
-    el.textContent = Math.round(eased * target);
-    if (t < 1) requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-}
-
-// ─── MOCKUP ANIMATIONS (token counter + chip entrance) ───
-const mockupObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      setTimeout(animateTokens, 600);
-      document.querySelectorAll('.suggestion-chip').forEach((chip, i) => {
-        setTimeout(() => {
-          chip.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-          chip.style.opacity = '1';
-          chip.style.transform = 'none';
-        }, 900 + i * 120);
-      });
-      mockupObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.3 });
-const mockup = document.querySelector('.mockup-window');
-if (mockup) mockupObs.observe(mockup);
-
-// ─── CHIP DISMISS ───
-document.querySelectorAll('.suggestion-chip-dismiss').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const chip = btn.closest('.suggestion-chip');
-    chip.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
-    chip.style.opacity = '0';
-    chip.style.transform = 'scale(0.85)';
-    setTimeout(() => chip.remove(), 220);
-  });
-});
 
 // ─── SMOOTH SCROLL ───
 document.querySelectorAll('a[href^="#"]').forEach(a => {
