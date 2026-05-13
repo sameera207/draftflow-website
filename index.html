@@ -734,23 +734,43 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 0; }
 
 <script>
 // ─── FEATURES GRID ───
-const features = [
-  { tag: ".md",    title: "Markdown editor",    body: "Distraction-free writing with live split-pane preview. Edit / split / preview modes. Mermaid diagram rendering." },
-  { tag: "#skill", title: "Skill autocomplete", body: "Type <code>#</code> to fuzzy-search skills, <code>/</code> for agents. Hover to preview a skill without leaving the editor." },
-  { tag: "/df",    title: "Claude Code bridge", body: "Open files directly from Claude Code, edit them, and send the result back with one click." },
-  { tag: "∿",     title: "Token counter",       body: "Real-time token count powered by <code>@anthropic-ai/tokenizer</code>. Know your context before you send." },
-  { tag: "~/",    title: "Project tree",        body: "Browse all files rooted at the nearest <code>CLAUDE.md</code>. Recent files panel. Quick-open palette via <code>⌘P</code>." },
-  { tag: "◻",    title: "Scratchpad",          body: "Persistent scratch space separate from your draft. Auto-saved to <code>~/.claude/draftflow-scratch.md</code>." },
-  { tag: "✦",    title: "Suggested skills",    body: "As you type, relevant skills surface as chips below the editor — no trigger needed. Powered by <code>claude-haiku-4-5</code>. Silently off without an API key." }
+const FALLBACK_FEATURES = [
+  { icon: ".md",    title: "Markdown editor",    description: "Distraction-free writing with live split-pane preview. Edit / split / preview modes. Mermaid diagram rendering." },
+  { icon: "#skill", title: "Skill autocomplete", description: "Type <code>#</code> to fuzzy-search skills, <code>/</code> for agents. Hover to preview a skill without leaving the editor." },
+  { icon: "/df",    title: "Claude Code bridge", description: "Open files directly from Claude Code, edit them, and send the result back with one click." },
+  { icon: "∿",     title: "Token counter",       description: "Real-time token count powered by <code>@anthropic-ai/tokenizer</code>. Know your context before you send." },
+  { icon: "~/",    title: "Project tree",        description: "Browse all files rooted at the nearest <code>CLAUDE.md</code>. Recent files panel. Quick-open palette via <code>⌘P</code>." },
+  { icon: "◻",    title: "Scratchpad",          description: "Persistent scratch space separate from your draft. Auto-saved to <code>~/.claude/draftflow-scratch.md</code>." },
+  { icon: "✦",    title: "Suggested skills",    description: "As you type, relevant skills surface as chips below the editor — no trigger needed. Powered by <code>claude-haiku-4-5</code>. Silently off without an API key." }
 ];
-document.getElementById('features-grid').innerHTML = features.map(f => `
+
+function renderFeatures(features) {
+  document.getElementById('features-grid').innerHTML = features.map(feature => `
   <div class="feature-card">
-    <div class="feature-icon">${f.tag}</div>
-    <h3>${f.title}</h3>
-    <p>${f.body}</p>
-    ${f.image ? `<div class="feature-media"><img src="${f.image}" alt="${f.title}" loading="lazy"></div>` : ''}
+    <div class="feature-icon">${feature.icon}</div>
+    <h3>${feature.title}</h3>
+    <p>${feature.description}</p>
   </div>
 `).join('');
+}
+
+async function loadFeatures() {
+  try {
+    const res = await fetch('/releases.json');
+    if (!res.ok) throw new Error('fetch failed');
+    const releases = await res.json();
+    const latest = releases.find(r => r.type === 'feature' && Array.isArray(r.features));
+    if (latest && latest.features.length > 0) {
+      renderFeatures(latest.features);
+      return;
+    }
+  } catch (e) {
+    // fall through to fallback
+  }
+  renderFeatures(FALLBACK_FEATURES);
+}
+
+document.addEventListener('DOMContentLoaded', loadFeatures);
 
 // ─── FAQ ACCORDION ───
 document.querySelectorAll('.faq-q').forEach(btn => {
