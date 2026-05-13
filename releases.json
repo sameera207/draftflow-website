@@ -1,0 +1,46 @@
+[
+  {
+    "version": "0.1.0",
+    "type": "feature",
+    "date": "2026-04-01",
+    "title": "Welcome to Draftflow",
+    "features": [
+      {
+        "icon": ".md",
+        "title": "Markdown editor",
+        "description": "Distraction-free writing with live split-pane preview. Edit / split / preview modes. Mermaid diagram rendering."
+      },
+      {
+        "icon": "#skill",
+        "title": "Skill autocomplete",
+        "description": "Type # to fuzzy-search skills, / for agents. Hover to preview a skill without leaving the editor."
+      },
+      {
+        "icon": "/df",
+        "title": "Claude Code bridge",
+        "description": "Open files directly from Claude Code, edit them, and send the result back with one click.",
+        "screenshot": "https://draftflow.dev/assets/features/bridge.gif"
+      },
+      {
+        "icon": "∿",
+        "title": "Token counter",
+        "description": "Real-time token count powered by @anthropic-ai/tokenizer. Know your context before you send."
+      },
+      {
+        "icon": "~/",
+        "title": "Project tree",
+        "description": "Browse all files rooted at the nearest CLAUDE.md. Recent files panel. Quick-open palette via ⌘P."
+      },
+      {
+        "icon": "◻",
+        "title": "Scratchpad",
+        "description": "Persistent scratch space separate from your draft. Auto-saved to ~/.claude/draftflow-scratch.md."
+      },
+      {
+        "icon": "✦",
+        "title": "Suggested skills",
+        "description": "As you type, relevant skills surface as chips below the editor — no trigger needed. Powered by claude-haiku-4-5. Silently off without an API key."
+      }
+    ]
+  }
+]
