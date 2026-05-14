@@ -1,5 +1,18 @@
 [
   {
+    "version": "0.2.0",
+    "type": "feature",
+    "date": "2026-05-14",
+    "title": "What's New in 0.2.0",
+    "features": [
+      {
+        "icon": "/df",
+        "title": "What's New modal",
+        "description": "See new features automatically on first launch after an update, or revisit any time via Help → What's New."
+      }
+    ]
+  },
+  {
     "version": "0.1.0",
     "type": "feature",
     "date": "2026-04-01",
