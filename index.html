@@ -728,6 +728,7 @@ function renderFeatures(features) {
     <div class="feature-icon">${feature.icon}</div>
     <h3>${feature.title}</h3>
     <p>${feature.description}</p>
+    ${feature.screenshot ? `<div class="feature-media"><img src="${feature.screenshot}" alt="${feature.title}" loading="lazy"></div>` : ''}
   </div>
 `).join('');
 }
@@ -737,9 +738,20 @@ async function loadFeatures() {
     const res = await fetch('/releases.json');
     if (!res.ok) throw new Error('fetch failed');
     const releases = await res.json();
-    const latest = releases.find(r => r.type === 'feature' && Array.isArray(r.features));
-    if (latest && latest.features.length > 0) {
-      renderFeatures(latest.features);
+    const seen = new Set();
+    const allFeatures = [];
+    for (const release of releases) {
+      if (release.type === 'feature' && Array.isArray(release.features)) {
+        for (const f of release.features) {
+          if (!seen.has(f.title)) {
+            seen.add(f.title);
+            allFeatures.push(f);
+          }
+        }
+      }
+    }
+    if (allFeatures.length > 0) {
+      renderFeatures(allFeatures);
       return;
     }
   } catch (e) {
