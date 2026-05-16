@@ -375,6 +375,61 @@ nav {
   color: var(--accent);
 }
 
+/* ─── PLUGINS ─── */
+.plugins-section { padding: 5rem 0; border-top: 1px solid var(--border); }
+.plugins-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2.5rem; align-items: start; }
+.plugin-manifest {
+  background: #1c1a17;
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-family: var(--mono);
+}
+.plugin-manifest-bar {
+  background: #252320;
+  padding: 9px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.plugin-manifest-label { margin-left: auto; font-size: 0.62rem; color: rgba(255,255,255,0.2); letter-spacing: 0.05em; }
+.plugin-manifest-body { padding: 1.2rem 1.4rem; font-size: 0.75rem; line-height: 1.9; color: #abb2bf; }
+.pm-key { color: #e06c75; }
+.pm-str { color: #98c379; }
+.pm-arr { color: #e5c07b; }
+.pm-punct { color: rgba(255,255,255,0.3); }
+.plugins-perms { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+.perm-chip {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1px solid rgba(45,90,61,0.18);
+  padding: 4px 10px;
+  border-radius: 5px;
+  letter-spacing: 0.02em;
+}
+.plugins-callout {
+  margin-top: 2rem;
+  background: var(--paper-dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.6rem;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  line-height: 1.65;
+}
+.plugins-callout code {
+  font-family: var(--mono);
+  font-size: 0.78em;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 5px;
+  color: var(--accent);
+}
+@media (max-width: 640px) { .plugins-intro { grid-template-columns: 1fr; } .plugins-perms { grid-template-columns: 1fr 1fr 1fr; } }
+
 /* ─── INSTALL ─── */
 .install-section { padding: 5rem 0; border-top: 1px solid var(--border); }
 .install-options { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2rem; }
@@ -489,6 +544,7 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 0; }
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#bridge">Bridge</a></li>
+      <li><a href="#plugins">Plugins</a></li>
       <li><a href="#install">Install</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
@@ -604,6 +660,73 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 0; }
   </div>
 </section>
 
+<!-- PLUGINS -->
+<section class="plugins-section" id="plugins">
+  <div class="wrap">
+    <div class="section-label reveal">Extensibility</div>
+    <div class="section-title reveal reveal-delay-1">Build your own tools.</div>
+    <p class="section-sub reveal reveal-delay-2">The Plugin System gives you first-class access to the editor with a scoped API and nine granular permissions — no monkey-patching required.</p>
+
+    <div class="plugins-intro reveal reveal-delay-3">
+      <div>
+        <div class="install-option-label" style="margin-bottom:0.75rem">plugin.json manifest</div>
+        <div class="plugin-manifest">
+          <div class="plugin-manifest-bar">
+            <span class="t-dot t-red"></span>
+            <span class="t-dot t-yel"></span>
+            <span class="t-dot t-grn"></span>
+            <span class="plugin-manifest-label">~/.draftflow/plugins/my-plugin/plugin.json</span>
+          </div>
+          <div class="plugin-manifest-body">
+            <div><span class="pm-punct">{</span></div>
+            <div>&nbsp; <span class="pm-key">"id"</span><span class="pm-punct">:</span> <span class="pm-str">"my-plugin"</span><span class="pm-punct">,</span></div>
+            <div>&nbsp; <span class="pm-key">"name"</span><span class="pm-punct">:</span> <span class="pm-str">"My Plugin"</span><span class="pm-punct">,</span></div>
+            <div>&nbsp; <span class="pm-key">"version"</span><span class="pm-punct">:</span> <span class="pm-str">"1.0.0"</span><span class="pm-punct">,</span></div>
+            <div>&nbsp; <span class="pm-key">"main"</span><span class="pm-punct">:</span> <span class="pm-str">"index.js"</span><span class="pm-punct">,</span></div>
+            <div>&nbsp; <span class="pm-key">"permissions"</span><span class="pm-punct">:</span> <span class="pm-arr">[</span></div>
+            <div>&nbsp;&nbsp;&nbsp; <span class="pm-str">"editor.read"</span><span class="pm-punct">,</span></div>
+            <div>&nbsp;&nbsp;&nbsp; <span class="pm-str">"editor.insert"</span><span class="pm-punct">,</span></div>
+            <div>&nbsp;&nbsp;&nbsp; <span class="pm-str">"ui.pluginToolbar"</span></div>
+            <div>&nbsp; <span class="pm-arr">]</span></div>
+            <div><span class="pm-punct">}</span></div>
+          </div>
+        </div>
+        <div class="plugins-callout" style="margin-top:1rem">
+          Plugins live in <code>~/.draftflow/plugins/&lt;name&gt;/</code>. Drop the folder in and relaunch — no build step, no registry.
+        </div>
+      </div>
+
+      <div>
+        <div class="install-option-label" style="margin-bottom:0.75rem">Nine granular permissions</div>
+        <div class="plugins-perms">
+          <div class="perm-chip">editor.insert</div>
+          <div class="perm-chip">editor.read</div>
+          <div class="perm-chip">settings.read</div>
+          <div class="perm-chip">settings.readwrite</div>
+          <div class="perm-chip">network.fetch</div>
+          <div class="perm-chip">fs.read</div>
+          <div class="perm-chip">fs.write</div>
+          <div class="perm-chip">ui.pluginToolbar</div>
+          <div class="perm-chip">ui.modal</div>
+        </div>
+
+        <div class="install-option-label" style="margin-bottom:0.75rem; margin-top:1.6rem">Lifecycle events</div>
+        <div class="plugins-perms">
+          <div class="perm-chip">file:opened</div>
+          <div class="perm-chip">file:saved</div>
+          <div class="perm-chip">send:triggered</div>
+          <div class="perm-chip">theme:changed</div>
+          <div class="perm-chip">app:ready</div>
+        </div>
+
+        <div class="plugins-callout" style="margin-top:1.6rem">
+          Each plugin receives an API scoped to only its declared capabilities. Unpermitted methods are deleted at load time — not just blocked. A failing plugin is skipped with a console warning; others continue normally. A <code>df-hello</code> reference plugin ships with the app.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- INSTALL -->
 <section class="install-section" id="install">
   <div class="wrap">
@@ -691,6 +814,10 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 0; }
         <div class="faq-a">The button copies your current markdown to the clipboard as a formatted prompt. You then paste it into a Claude Code session in your terminal. No browser integration — just clipboard.</div>
       </div>
       <div class="faq-item">
+        <button class="faq-q">How do I build a plugin? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a">Create a folder at <code>~/.draftflow/plugins/&lt;your-plugin&gt;/</code> with a <code>plugin.json</code> manifest and an <code>index.js</code> entry point. Declare the permissions you need in the manifest — your plugin will only receive API methods for those capabilities. Export <code>initMain(api)</code> for main-process work and <code>initRenderer(api)</code> for renderer work. Relaunch Draftflow to load. The bundled <code>df-hello</code> plugin is a working reference implementation.</div>
+      </div>
+      <div class="faq-item">
         <button class="faq-q">Is this open source? <span class="faq-arrow">▾</span></button>
         <div class="faq-a">Yes. Draftflow is fully open source under the MIT license. Fork it, extend it, make it yours. Contributions welcome at <code>github.com/sameera207/draftflow</code>.</div>
       </div>
@@ -719,7 +846,8 @@ const FALLBACK_FEATURES = [
   { icon: "∿",     title: "Token counter",       description: "Real-time token count powered by <code>@anthropic-ai/tokenizer</code>. Know your context before you send." },
   { icon: "~/",    title: "Project tree",        description: "Browse all files rooted at the nearest <code>CLAUDE.md</code>. Recent files panel. Quick-open palette via <code>⌘P</code>." },
   { icon: "◻",    title: "Scratchpad",          description: "Persistent scratch space separate from your draft. Auto-saved to <code>~/.claude/draftflow-scratch.md</code>." },
-  { icon: "✦",    title: "Suggested skills",    description: "As you type, relevant skills surface as chips below the editor — no trigger needed. Powered by <code>claude-haiku-4-5</code>. Silently off without an API key." }
+  { icon: "✦",    title: "Suggested skills",    description: "As you type, relevant skills surface as chips below the editor — no trigger needed. Powered by <code>claude-haiku-4-5</code>. Silently off without an API key." },
+  { icon: "⬡",    title: "Plugin System",       description: "First-class plugins with a scoped API and nine granular permissions. Drop a folder into <code>~/.draftflow/plugins/</code> to extend the editor." }
 ];
 
 function renderFeatures(features) {

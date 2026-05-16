@@ -1,5 +1,28 @@
 [
   {
+    "version": "0.3.0",
+    "type": "feature",
+    "date": "2026-05-16",
+    "title": "What's New in 0.3.0 — Plugin System",
+    "features": [
+      {
+        "icon": "⬡",
+        "title": "Plugin System",
+        "description": "First-class plugins with a scoped API and nine granular permissions. Drop a folder into <code>~/.draftflow/plugins/</code>, declare capabilities in <code>plugin.json</code>, and extend the editor."
+      },
+      {
+        "icon": "⚡",
+        "title": "Lifecycle events",
+        "description": "Plugins subscribe to <code>file:opened</code>, <code>file:saved</code>, <code>send:triggered</code>, <code>theme:changed</code>, and <code>app:ready</code> — react to exactly what they need."
+      },
+      {
+        "icon": "▦",
+        "title": "Plugin toolbar",
+        "description": "Each loaded plugin gets its own mount point in a dedicated toolbar strip between the editor toolbar and content area. Hidden automatically when no plugins are loaded."
+      }
+    ]
+  },
+  {
     "version": "0.2.0",
     "type": "feature",
     "date": "2026-05-14",
